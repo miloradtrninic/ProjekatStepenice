@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Extended.Wpf.Toolkit</id>
+    <version>3.2.0</version>
+    <title>Extended WPF Toolkit</title>
+    <authors>Xceed</authors>
+    <owners>Xceed</owners>
+    <licenseUrl>https://github.com/xceedsoftware/wpftoolkit/blob/master/license.md</licenseUrl>
+    <projectUrl>https://github.com/xceedsoftware/wpftoolkit</projectUrl>
+    <iconUrl>https://xceed.com/wp-content/uploads/2017/07/Xceed_Logo_Retina-400x400.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extended WPF Toolkit is the number one collection of WPF controls, components and utilities for creating next generation Windows applications. Provides 48 controls, all offered under the Microsoft Public License for maximum freedom. v3.2.0 provides the new IconButton control as well as 24 bug fixes and improvements. Documentation, source, and discussions are hosted on Github at https://github.com/xceedsoftware/wpftoolkit. Check out the Plus Edition to support the project, get more controls and features, and be at least 1 release ahead of the free releases.</description>
+    <summary>Extended WPF Toolkit is the number one collection of WPF controls for creating next-gen Windows apps. v3.2.0 provides 24 bug fixes and improvements.</summary>
+    <releaseNotes>v3.2.0 provides the new IconButton control with 24 bug fixes and improvements. Released September 25, 2017.</releaseNotes>
+    <copyright>Copyright © Xceed Software Inc. 2010-2017</copyright>
+    <tags>Extended WPF Toolkit</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="PresentationCore" targetFramework=".NETFramework3.5, .NETFramework4.0" />
+      <frameworkAssembly assemblyName="PresentationFramework" targetFramework=".NETFramework3.5, .NETFramework4.0" />
+      <frameworkAssembly assemblyName="WindowsBase" targetFramework=".NETFramework3.5, .NETFramework4.0" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5, .NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Xaml" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
