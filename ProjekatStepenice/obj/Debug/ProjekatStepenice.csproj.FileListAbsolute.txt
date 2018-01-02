@@ -52,3 +52,4 @@ D:\mono\E2\IV GODINA\RG\ProjekatStepenice\ProjekatStepenice\obj\Debug\ProjekatSt
 D:\mono\E2\IV GODINA\RG\ProjekatStepenice\ProjekatStepenice\obj\Debug\ProjekatStepenice.csproj.GenerateResource.Cache
 D:\mono\E2\IV GODINA\RG\ProjekatStepenice\ProjekatStepenice\obj\Debug\ProjekatStepenice.exe
 D:\mono\E2\IV GODINA\RG\ProjekatStepenice\ProjekatStepenice\obj\Debug\ProjekatStepenice.pdb
+D:\mono\E2\IV GODINA\RG\ProjekatStepenice\ProjekatStepenice\obj\Debug\ProjekatStepenice.csprojResolveAssemblyReference.cache

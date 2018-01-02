@@ -61,10 +61,10 @@ namespace ProjekatStepenice
               //  m_world = new World(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "3DModel\\knight"), "knightObject.obj", (int)openGLControl.Width, (int)openGLControl.Height, openGLControl.OpenGL);
                 m_world = new World(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "3DModel\\Body"), "BodyMesh.obj", (int)openGLControl.Width, (int)openGLControl.Height, openGLControl.OpenGL);
                // IsEnabledAnimation = !m_world.Animation;
-                
-                slColorR.Value = m_world.RefleksionaBoja[0] * 255f;
-                slColorG.Value = m_world.RefleksionaBoja[1] * 255f;
-                slColorB.Value = m_world.RefleksionaBoja[2] * 255f;
+                float[] tackaBoja = m_world.TackastaBoja;
+                slColorR.Value = tackaBoja[0] * 255f;
+                slColorG.Value = tackaBoja[1] * 255f;
+                slColorB.Value = tackaBoja[2] * 255f;
                 DataContext = m_world;
             }
             catch (Exception e)
@@ -145,7 +145,7 @@ namespace ProjekatStepenice
 
         private void ColorSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            m_world.RefleksionaBoja = new float[] { (float)slColorR.Value / 255f, (float)slColorG.Value / 255f, (float)slColorB.Value / 255f, 1f };
+            m_world.TackastaBoja = new float[] { (float)slColorR.Value / 255f, (float)slColorG.Value / 255f, (float)slColorB.Value / 255f, 1f };
         }
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

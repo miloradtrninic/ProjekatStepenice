@@ -9,6 +9,7 @@ using SharpGL.SceneGraph.Core;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Text;
 using System.Runtime.CompilerServices;
 using System.Windows.Threading;
 using AssimpSample;
@@ -21,7 +22,7 @@ namespace ProjekatStepenice
     {
         #region Atributi
         public event PropertyChangedEventHandler PropertyChanged;
-        private float[] refleksionaBoja = {0.0f, 0.0f, 1.0f, 1.0f};
+        private float[] tackastaBoja = {1f,1f,1f,1f};
 
         private Sphere lampA;
         private Sphere lampR;
@@ -103,10 +104,10 @@ namespace ProjekatStepenice
 
         #region Properties
 
-        public float[] RefleksionaBoja
+        public float[] TackastaBoja
         {
-            get { return refleksionaBoja; }
-            set { refleksionaBoja = value; }
+            get { return tackastaBoja; }
+            set { tackastaBoja = value; }
         }
 
         public float Fatindex
@@ -300,17 +301,19 @@ namespace ProjekatStepenice
             float[] light0ambient =  { 0.2f, 0.2f, 0.2f, 1.0f };
             float[] light0diffuse =  { 0.2f, 0.2f, 0.2f, 1.0f };
             float[] light0specular = { 0.2f, 0.2f, 0.2f, 1.0f };
+            float[] smer = { -1f, 0f, 0f };
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_SPOT_CUTOFF, 180.0f);
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_AMBIENT, light0ambient);
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_DIFFUSE, light0diffuse);
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_SPECULAR, light0specular);
 
-            float[] smer = {-1f, 0f, 0.0f};
+            
+            float[] refleksioni = {0.0f,0.0f,1.0f, 1f};
             gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_CUTOFF, 35.0f);
             gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_DIRECTION, smer);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_AMBIENT, refleksionaBoja);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_DIFFUSE, refleksionaBoja);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPECULAR, refleksionaBoja);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_AMBIENT, refleksioni);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_DIFFUSE, refleksioni);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPECULAR, refleksioni);
 
             // Ukljuci svetlosni izvor 
             gl.Enable(OpenGL.GL_LIGHTING);
@@ -374,9 +377,10 @@ namespace ProjekatStepenice
             DrawFloor(gl);
             gl.PushMatrix();
 
-            //iscrtavanje lampeA desno od stepenica
+            //iscrtavanje tackastog desno od stepenica
             gl.PushMatrix();
             float[] pos = new float[] {1000f, 0, 0, 1.0f};
+            gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_AMBIENT, tackastaBoja);
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_POSITION, pos);
             gl.Translate(pos[0], pos[1], pos[2]);
             lampA.Material.Bind(gl);
@@ -551,9 +555,7 @@ namespace ProjekatStepenice
 
             //iscrtavanje lampe refleksionog izvora
             gl.PushMatrix();
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_AMBIENT, refleksionaBoja);
-            //gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_DIFFUSE, refleksionaBoja);
-            float[] pozicija = {100f, 700f, 100f, 1f};
+            float[] pozicija = {100f, 350f, 100f, 1f};
             gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_POSITION, pozicija);
             gl.Translate(pozicija[0], pozicija[1], pozicija[2]);
             //lampR.Material.Emission = refleksionaBojaLampe;
