@@ -299,8 +299,8 @@ namespace ProjekatStepenice
             gl.ColorMaterial(OpenGL.GL_FRONT, OpenGL.GL_AMBIENT_AND_DIFFUSE);
 
             float[] light0ambient =  { 0.2f, 0.2f, 0.2f, 1.0f };
-            float[] light0diffuse =  { 0.2f, 0.2f, 0.2f, 1.0f };
-            float[] light0specular = { 0.2f, 0.2f, 0.2f, 1.0f };
+            float[] light0diffuse = new float[] { 0.6f, 0.6f, 0.6f, 1.0f };
+            float[] light0specular = new float[] { 1f, 1f, 1f, 1.0f };
             float[] smer = { -1f, 0f, 0f };
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_SPOT_CUTOFF, 180.0f);
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_AMBIENT, light0ambient);
@@ -308,12 +308,17 @@ namespace ProjekatStepenice
             gl.Light(OpenGL.GL_LIGHT0, OpenGL.GL_SPECULAR, light0specular);
 
             
-            float[] refleksioni = {0.0f,0.0f,1.0f, 1f};
+           
+            //float[] refleksioni = new float[] { 0.0f, 5.0f, 0.0f, 1.0f };
+            float[] light1pos = new float[] { 0.0f, 5.0f, 0.0f, 1.0f };
+            float[] light1ambient = new float[] { 0.000f, 0.0f, 0.820f, 1.0f };
+            float[] light1diffuse = new float[] { 0.6f, 0.6f, 0.6f, 1.0f };
+            float[] light1specular = new float[] { 1f, 1f, 1f, 1.0f };
             gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_CUTOFF, 35.0f);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_DIRECTION, smer);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_AMBIENT, refleksioni);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_DIFFUSE, refleksioni);
-            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPECULAR, refleksioni);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPOT_DIRECTION, light1pos);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_AMBIENT, light1ambient);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_DIFFUSE, light1diffuse);
+            gl.Light(OpenGL.GL_LIGHT1, OpenGL.GL_SPECULAR, light1specular);
 
             // Ukljuci svetlosni izvor 
             gl.Enable(OpenGL.GL_LIGHTING);
